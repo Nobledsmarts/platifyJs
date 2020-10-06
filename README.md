@@ -6,7 +6,7 @@ a simple lightweight open source templating library in JavaScript
 
 //index.html
 
-&lt;h1 id="element">%{content}%</h1>
+&lt;h1 id="element">%{content}% &lt;/h1>
 
 //main.js
 
@@ -30,5 +30,5 @@ platify.mount(mounting element);
 
 //index.html
 
-&lt;h1 id="mounting element">%{the object element}%</h1>
+&lt;h1 id="mounting element">%{the object element}% &lt;/h1>
 
