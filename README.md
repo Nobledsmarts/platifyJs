@@ -1,7 +1,6 @@
 # platifyJs
 A simple lightweight open source templating library in JavaScript
 
-
 # usage
 - Clone the platify.js library and link it in your html file using the JavaScript `script` tag:
 ```javascript 
@@ -19,7 +18,28 @@ The **main.js** file contians the following code
 
 ```javascript
 //main.js
+//your values object
+let values = { key : value };
+let platify = new Platify(values);
+platify.mount(rootElement);
+```
 
+```HTML
+<!--index.html-->
+<body id="rootElement">
+<h1>%{key}% </h1>
+</body>
+```
+## usage
+```HTML
+<!--index.html-->;
+<body id="root">
+<h1>%{content}%</h1>
+</body>
+```
+```JAVASCRIPT
+
+//main.js
 let values ={
   content:"Hello World!"
 };
@@ -46,5 +66,10 @@ platify.mount(mounting element);
 
 ```html
   <!-- index.html -->
-<h1 id="mounting element">%{the object element}% &lt;/h1>
+<h1 id="mounting element">%{the object element}% </h1>
 ```
+platify.mount('#root');
+```
+output:>
+Hello World!
+
