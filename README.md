@@ -12,7 +12,7 @@ Below is an example usuage for Platify Javascript Library. An **index.html** fil
 
 ```html
     <!-- index.html -->
-  <h1 id="element">%{content}% &lt;/h1>
+  <h1 id="element">%{content}% </h1>
 ```
 
 The **main.js** file contians the following code
