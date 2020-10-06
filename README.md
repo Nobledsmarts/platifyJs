@@ -10,17 +10,17 @@ let platify = new Platify(values);
 platify.mount(rootElement);
 ```
 ```HTML
-lt;!--index.html--&gt;
-&lt;body id="rootElement"&gt;
-&lt;h1>%{key}% &lt;/h1>
-&lt;/body&gt;
+<!--index.html-->
+<body id="rootElement">
+<h1>%{key}% </h1>
+</body>
 ```
 ## usage
 ```HTML
-&lt;!--index.html--&gt;
-&lt;body id="root"&gt;
-&lt;h1 id="element">%{content}% &lt;/h1>
-&lt;/body&gt;
+<!--index.html-->;
+<body id="root">
+<h1>%{content}%</h1>
+</body>
 ```
 ```JAVASCRIPT
 //main.js
