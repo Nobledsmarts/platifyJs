@@ -1,34 +1,35 @@
 # platifyJs
 a simple lightweight open source templating library in JavaScript
 
-
-## usage
-
-//index.html
-
-&lt;h1 id="element">%{content}% &lt;/h1>
-
+## syntax
+```JAVASCRIPT
 //main.js
-
+//your values object
+let values = { key : value };
+let platify = new Platify(values);
+platify.mount(rootElement);
+```
+```HTML
+<!--index.html-->
+<body id="rootElement">
+<h1>%{key}% </h1>
+</body>
+```
+## usage
+```HTML
+<!--index.html-->;
+<body id="root">
+<h1>%{content}%</h1>
+</body>
+```
+```JAVASCRIPT
+//main.js
 let values ={
   content:"Hello World!"
 };
 
 let platify = new Platify(values);
-platify.mount('#element');
+platify.mount('#root');
+```
 output:>
 Hello World!
-
-## syntax
-
-//main.js
-
-your values object
-let value = { object elements };
-let platify = new Platify(values);
-platify.mount(mounting element);
-
-//index.html
-
-&lt;h1 id="mounting element">%{the object element}% &lt;/h1>
-

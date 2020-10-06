@@ -10,17 +10,16 @@ class Platify{
 		this.templateInfo = templateInfo;
 	}
 //appending on element with the specific object in curly brackets
-	mount(element){	
-		let allTemplate = document.querySelector(element);
-		let templateContents = allTemplate.innerHTML.split('%');
-		let templateContentsNow = '';
-		templateContents.forEach(templateContent=>{
-			if(templateContent.match(/{[a-zA-Z0-9]+}/g)){
-				templateContent = eval('this.templateInfo.'+templateContent.match(/{[a-zA-Z0-9]+}/g)[0].replace(/{/g, '').replace (/}/g, ''));
-			}
-			templateContentsNow += templateContent;
-		});
-		templateContents = templateContentsNow;
-		allTemplate.innerHTML = templateContents;
+	mount(element){
+		let root = document.querySelector(element);
+		if(root){
+			let rootContents = root.innerHTML;
+			let regex = /\%{(.+?)}\%/ig;
+			rootContents = rootContents.replace(regex, (match) => {
+				let prop = match.slice(2, -2);
+				return eval('this.templateInfo.' + prop);
+			});
+			root.innerHTML = rootContents;
+		}
 	}
 };

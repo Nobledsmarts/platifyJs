@@ -5,6 +5,4 @@ let contents = {
 };
 
 let myContents = new Platify(contents);
-myContents.mount('#header');
-myContents.mount('#body');
-myContents.mount('#footer');
+myContents.mount('#root');
