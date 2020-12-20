@@ -5,7 +5,7 @@ a simple lightweight open source templating library in JavaScript
 ```JAVASCRIPT
 //main.js
 //initialize platify class
-then reference the element to map for variables
+//then reference the element to map for variables
 let platify = new Platify();
 platify.template("body");
 ```
