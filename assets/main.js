@@ -1,3 +1,3 @@
 let platify = new Platify();
 
-platify.tempplate("body");
+platify.template("body");
