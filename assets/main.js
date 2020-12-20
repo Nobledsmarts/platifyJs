@@ -1,8 +1,3 @@
-let contents = {
-	header:'<h1>xeptre.com</h1>',
-	body:'we are the good ppl',
-	footer:'<h3>© esecodes</h3>',
-};
+let platify = new Platify();
 
-let myContents = new Platify(contents);
-myContents.mount('#root');
+platify.tempplate("body");
