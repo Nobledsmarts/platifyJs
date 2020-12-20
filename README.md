@@ -4,32 +4,30 @@ a simple lightweight open source templating library in JavaScript
 ## syntax
 ```JAVASCRIPT
 //main.js
-//your values object
-let values = { key : value };
-let platify = new Platify(values);
-platify.mount(rootElement);
+//initialize platify class
+then reference the element to map for variables
+let platify = new Platify();
+platify.template("body");
 ```
 ```HTML
 <!--index.html-->
-<body id="rootElement">
-<h1>%{key}% </h1>
+<body>
+<h1>%[key]%</h1>
 </body>
 ```
 ## usage
 ```HTML
 <!--index.html-->;
-<body id="root">
-<h1>%{content}%</h1>
+<body>
+<h1>%[content]%</h1>
 </body>
 ```
 ```JAVASCRIPT
 //main.js
-let values ={
-  content:"Hello World!"
-};
+let content = "Hello World!";
 
-let platify = new Platify(values);
-platify.mount('#root');
+let platify = new Platify();
+platify.template('body');
 ```
 output:>
 Hello World!
