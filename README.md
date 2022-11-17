@@ -17,11 +17,15 @@ Below is an example usuage for Platify Javascript Library. An **index.html** fil
 ## Syntax
 
 ```javascript
-//main.js
+/* Main.js */
 
-your values object
+//your values object
 let valuesObject = { key: "value" };
+
+//initialize platify
 let platify = new Platify(valuesObject);
+
+//mount to your element to map
 platify.mount("#mounting-element-selector");
 ```
 
