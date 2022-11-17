@@ -11,45 +11,7 @@ Below is an example usuage for Platify Javascript Library. An **index.html** fil
 
 ```html
     <!-- index.html -->
-  <h1 id="element">%{content}% </h1>
-```
-
-The **main.js** file contians the following code
-
-```javascript
-//main.js
-//initialize platify class
-//then reference the element to map for variables
-let platify = new Platify();
-platify.template("body");
-```
-
-```HTML
-<!--index.html-->
-<body>
-<h1>%[key]%</h1>
-</body>
-```
-## usage
-```HTML
-<!--index.html-->;
-<body>
-<h1>%[content]%</h1>
-</body>
-```
-```JAVASCRIPT
-
-//main.js
-let content = "Hello World!";
-
-
-let platify = new Platify(values);
-platify.mount('#element');
-```
-
-```
-output:>
-Hello World!
+    <h1 id="element">%{content}% </h1>
 ```
 
 ## Syntax
@@ -58,21 +20,16 @@ Hello World!
 //main.js
 
 your values object
-let value = { object elements };
-let platify = new Platify(values);
-platify.mount(mounting element);
+let valuesObject = { key: "value" };
+let platify = new Platify(valuesObject);
+platify.mount("#mounting-element-selector");
 ```
 
 ```html
   <!-- index.html -->
-<h1 id="mounting element">%{the object element}% </h1>
+  <h1 id="mounting-element-selector">This is the object key value - %{key}%</h1>
 ```
-platify.mount('#root');
 
-let platify = new Platify();
-platify.template('body');
-
-```
-output:>
-Hello World!
+**output>**
+This is the object value - value
 
