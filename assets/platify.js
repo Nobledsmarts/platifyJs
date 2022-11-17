@@ -5,21 +5,19 @@
 */
 
 class Platify{
-//initializing the templating data 
-	constructor(templateInfo){
-		this.templateInfo = templateInfo;
-	}
-//appending on element with the specific object in curly brackets
-	mount(element){
-		let root = document.querySelector(element);
-		if(root){
-			let rootContents = root.innerHTML;
-			let regex = /\%{(.+?)}\%/ig;
-			rootContents = rootContents.replace(regex, (match) => {
-				let prop = match.slice(2, -2);
-				return eval('this.templateInfo.' + prop);
-			});
-			root.innerHTML = rootContents;
-		}
-	}
-};
+    template(elementName = "*"){
+        document.querySelectorAll(elementName).forEach(element => {
+            let elementValues = element.innerHTML.split("%");
+            for (let index = 0; index < elementValues.length; index++) {
+                if(elementValues[index][0] == "[" && elementValues[index][elementValues[index].length - 1] == "]"){
+                    elementValues[index] = elementValues[index].split("");
+                    elementValues[index].pop();
+                    elementValues[index].shift();
+                    elementValues[index] = elementValues[index].join("");
+                    elementValues[index] = eval(elementValues[index]);
+                }
+            }
+            element.innerHTML = elementValues.join("");
+        });
+    }
+}

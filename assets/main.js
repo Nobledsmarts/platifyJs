@@ -1,8 +1,8 @@
-let contents = {
-	header:'<h1>xeptre.com</h1>',
-	body:'we are the good ppl',
-	footer:'<h3>© esecodes</h3>',
-};
+let header = "header";
+let body = "body";
+let footer = "footer";
 
-let myContents = new Platify(contents);
-myContents.mount('#root');
+
+//initialize the platify class then referecnce the element to map for variables
+let platify = new Platify();
+platify.template("body");
